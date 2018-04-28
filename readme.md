@@ -8,7 +8,7 @@ cp /bin/masscan /portmap/scanner/
 python run.py
 ```
 **Remember This is only functional and it's not very secure may be contains some RCE vulns before I have time to add some filter and params check**  
-**注意这个项目因为着急使用而临时开发，并没有进行安全性的参数过滤和处理，在我有时间回头进行处理前很有可能包含部分远程代码执行漏洞**
+**注意这个项目因为急于使用而临时开发，并没有进行安全性的参数过滤和处理，在我有时间回头进行处理前很有可能包含部分远程代码执行漏洞**
 ****
 **ONLY USE IT IN YOUR LOCAL NETWORK,I DON'T RECOMMEND YOU USE IT IN PRODUCTION ENVIROMENT OR WAN**  
 **建议只在局域网内使用，不要暴露该服务在公网！**  
@@ -20,7 +20,7 @@ python run.py
 - ip
 - ports
 
->新建任务，IP可以是CIDR格式，如127.0.0.0/24或192.168.1.8,ports使用|分割，如80|3389|8080|9000
+>新建任务，IP可以是CIDR格式，如127.0.0.0/24或192.168.1.8,ports使用|分割，如80|3389|8080|9000  
 请求ex:  
 ```ip=192.168.0.0/24&ports=22|80|3389```  
 响应ex:  
@@ -29,7 +29,7 @@ python run.py
 **stoptask**
 - taskid
 
->停止任务，taskid为新建任务时或从tasklist中获取的任务ID
+>停止任务，taskid为新建任务时或从tasklist中获取的任务ID  
 请求ex:  
 ```taskid=3```  
 响应ex:  
@@ -38,7 +38,7 @@ python run.py
 **restarttask**
 - taskid
 
->重新启动任务，taskid为新建任务时或从tasklist中获取的任务ID
+>重新启动任务，taskid为新建任务时或从tasklist中获取的任务ID  
 请求ex:  
 ```taskid=3```  
 响应ex:  
@@ -47,7 +47,7 @@ python run.py
 **getresult**
 - taskid
 
->获取扫描结果，taskid为新建任务时或从tasklist中获取的任务ID
+>获取扫描结果，taskid为新建任务时或从tasklist中获取的任务ID  
 请求ex:  
 ```taskid=3```  
 响应ex:  
@@ -56,7 +56,7 @@ python run.py
 **taskdetail**
 - taskid
 
->获取任务详情，taskid为新建任务时或从tasklist中获取的任务ID
+>获取任务详情，taskid为新建任务时或从tasklist中获取的任务ID  
 请求ex:  
 ```taskid=3```  
 响应ex:  
@@ -66,13 +66,13 @@ STATUS是任务状态:
 1.扫描中
 2.停止
 3.完成
-4.空结果（为扫描到任何开放端口和存活主机）
+4.空结果（未扫描到任何开放端口和存活主机）
 0.异常退出
 
 **deltask**
 - taskid
 
->删除任务，taskid为新建任务时或从tasklist中获取的任务ID
+>删除任务，taskid为新建任务时或从tasklist中获取的任务ID  
 请求ex:  
 ```taskid=3```  
 响应ex:  
@@ -81,14 +81,14 @@ STATUS是任务状态:
 **cleartasks**
 - None
 
->清空任务池，无需任何参数
+>清空任务池，无需任何参数  
 响应ex:  
 {"errorcode": 0, "sucess": true}
 
 **tasklist**
 - None
 
->获取任务列表，无需任何参数
+>获取任务列表，无需任何参数  
 响应ex:  
 {"errorcode": 0, "sucess": true, "idlist": [1, 2, 3]}
 
