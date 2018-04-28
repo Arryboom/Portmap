@@ -7,6 +7,12 @@ make
 cp /bin/masscan /portmap/scanner/
 python run.py
 ```
+**Remember This is only functional and it's not very secure may be contains some RCE vulns before I have time to add some filter and params check**
+**注意这个项目因为着急使用而临时开发，并没有进行安全性的参数过滤和处理，在我有时间回头进行处理前很有可能包含部分远程代码执行漏洞**
+****
+**ONLY USE IT IN YOUR LOCAL NETWORK,I DON'T RECOMMEND YOU USE IT IN PRODUCTION ENVIROMENT OR WAN**
+**建议只在局域网内使用，不要暴露该服务在公网！**
+****
 
 ##所有接口均使用POST传参和调用,默认端口为8080，可以在run.py进行修改
 
